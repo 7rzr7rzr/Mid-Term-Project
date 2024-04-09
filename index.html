@@ -2,18 +2,42 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
          <!-- 기기의 화면에 너비 맞추기, 초기 확대/축소 비율 1로 설정-->
         <title> #private space of GA-IN </title>
-        <style>
-            video {
-                width: 100%;
-                height: auto;
-            }
-            
-            h1 {
-                text-align: center;
+        <style>   
+            body {
                 font-family: Arial, sans-serif;
+                text-align: center;
+            } 
+
+            h1 {
+                text-align: Center;
+                font-size: 50px;
+                font-family: Arial, sans-serif;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            li a {
+                display: block; 
+                text-decoration: none; 
+                color: #333; 
+                font-size: 30px;
+            }
+
+            video {
+                width: 80%;
+                height: auto;
             }
 
             .container {
@@ -32,10 +56,26 @@
                 width: 100%;
                 height: auto;
             }
+
+            footer {
+                text-align: center;
+                font-family: Arial, sans-serif;
+                font-size: 18px;
+            }
         </style>
     </head>
     <body>
         <h1> 지극히 개인적인 가인이의 공간 </h1>
+        
+        <ul>
+            <li><a href = "category1.html"> About </a></li>
+            <li><a href = "category2.html"> myDaily </a></li>
+            <li><a href = "category3.html"> myTrip </a></li>
+            <li><a href = "category4.html"> mySpace </a></li>
+        </ul>
+
+        <br><br>
+
         <video id = "myVideo" controls>
             <source src = "C:\Users\82107\Desktop\deer.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -55,14 +95,21 @@
 
         <div class = "container">
             <div class = "image">
-                <img src = "image1.jpg" alt = "Image 1"> 
+                <img src = "C:\Users\82107\Desktop\image1.jpg" alt = "Image 1"> 
             </div>
             <div class = "image">
-                <img src= "image2.jpg" alt = "Image 2">
+                <img src= "C:\Users\82107\Desktop\image2.jpg" alt = "Image 2">
             </div>
             <div class = "image">
-                <img src = "image3.jpg" alt = "Image 3">
+                <img src ="C:\Users\82107\Desktop\image3.jpg" alt = "Image 3">
             </div>
         </div>
+        <footer>
+            <p> 이름: 김가인 | 소속: 단국대학교 죽전캠퍼스 | 학부: SW융합대학 산업보안학과 <br>
+                입학년도: 2020 | 학적상태: 4-1 재학 <br>
+                연락처: 010-1234-5678 | 이메일: gainnotkim@gmail.com  <br>
+                주소: 서울특별시 관악구 신림동  
+            </p>
+        </footer>
     </body>
 </html>
