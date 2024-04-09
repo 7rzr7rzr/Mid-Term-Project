@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- 기기의 화면에 너비 맞추기, 초기 확대/축소 비율 1로 설정-->
+        <title> #private space of GA-IN </title>
+        <style>
+            video {
+                width: 100%;
+                height: auto;
+            }
+            
+            h1 {
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> 지극히 개인적인 가인이의 공간 </h1>
+        <video id = "myVideo" controls>
+            <source src = "C:\Users\82107\Desktop\deer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <script>
+            var video = document.getElementById("myVideo");
+
+            video.addEventListener("click", function() {
+                if(video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+                });
+        </script>
+    </body>
+</html>
