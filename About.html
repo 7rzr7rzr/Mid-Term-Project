@@ -27,6 +27,7 @@
             li {
                 display: inline-block;
                 margin: 0 10px;
+                font-family: Arial, sans-serif;
             }
 
             li a {
@@ -35,6 +36,54 @@
                 color: #333; 
                 font-size: 30px;
             }
+
+            .profile_box {
+                display: flex;
+                justify-content: center; /* 중앙 정렬 */
+                align-items: flex-start;
+                flex-wrap: wrap; /* 화면 크기에 따라 내용이 다음 줄로 넘어갈 수 있도록 설정 */
+                max-width: 1200px; /* 최대 너비 설정 */
+                margin: 30px auto 0; /* 상단에 30px 마진 추가, 좌우 마진 자동으로 설정하여 중앙에 위치 */
+                padding: 20px;
+                gap: 20px; /* 항목 사이의 간격 */
+            }
+            
+            .photo, .career {
+                flex: 1; /* 유연한 크기 조정 */
+                min-width: 250px; /* 최소 너비 설정 */
+            }
+        
+            .photo img {
+                width: 100%; /* 이미지 너비를 부모 요소에 맞춤 */
+                height: auto; /* 이미지 높이를 자동으로 설정하여 비율 유지 */
+                border-radius: 10px; /* 이미지 모서리를 둥글게 */
+            }
+            
+            .career p {
+                text-align: left; /* 텍스트 왼쪽 정렬 */
+                font-size: 20px;
+                font-family: Arial, sans-serif;
+                line-height: 1.5; /* 줄 간격 */
+                color: #333; /* 텍스트 색상 */
+                margin: 10px 0; /* 위아래 마진 설정 */
+            }
+            
+            @media (max-width: 768px) {
+                .profile_box {
+                    flex-direction: column; /* 화면이 작을 때 세로로 쌓임 */
+                    align-items: center; /* 중앙 정렬 */
+                }
+                .photo, .career {
+                    width: 90%; /* 화면이 작을 때 너비 조정 */
+                }
+            }
+            
+            footer {
+                text-align: center;
+                font-family: Arial, sans-serif;
+                font-size: 18px;
+            }
+            
         </style>
     </head>
 
@@ -48,10 +97,34 @@
             <li><a href = "mySpace.html"> mySpace </a></li>
         </ul>
 
+        <div class = "profile_box">
+            <div class = "photo"> 
+                <img src = "C:\Users\82107\Desktop\gain_profile.jpg" alt = "Your Image">
+            </div>
+            
+            <div class = "career">
+                <p> 이름: 김가인 </p>
+                <p> 생년월일: 2000.03.25 </p>
+                <p> 학력: 단국대학교 산업보안학과 4-1 재학 </p>
+                <p> 수료 내역:<br>
+                    정보보안전문가양성-보안인프라구축&보안관제 과정 수료<br>
+                    (한국정보기술연구원, 2022.12.21.~2023.06.13) </p>
+                <p> 공인어학성적: TOEIC 780 (2023.02.19.~2025.02.19) </p>
+            </div>
+        </div>
+    
         <script>
             function goToHomePage() {
                 window.location.href = "index.html";
             }
         </script>
+
+        <footer>
+            <p> 이름: 김가인 | 소속: 단국대학교 죽전캠퍼스 | 학부: SW융합대학 산업보안학과 <br>
+                연락처: 010-1234-5678 | 이메일: gainnotkim@gmail.com  <br>
+                주소: 서울특별시 관악구 신림동  
+            </p>
+        </footer>
+
     </body>
 </html>
