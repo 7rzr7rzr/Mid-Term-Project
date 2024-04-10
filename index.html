@@ -15,6 +15,8 @@
                 text-align: Center;
                 font-size: 50px;
                 font-family: Arial, sans-serif;
+                cursor: pointer;
+                color: #333;
             }
 
             ul {
@@ -26,6 +28,7 @@
             li {
                 display: inline-block;
                 margin: 0 10px;
+                font-family: Arial, sans-serif;
             }
 
             li a {
@@ -34,12 +37,31 @@
                 color: #333; 
                 font-size: 30px;
             }
-
-            video {
-                width: 80%;
-                height: auto;
+            
+            .social_links_container {
+                width: 100%; /* 컨테이너가 화면 너비를 전체 차지하도록 설정 */
+                display: flex;
+                justify-content: flex-end; /* 오른쪽 정렬 */
             }
-
+            
+            .social_links {
+                display: flex;
+                gap: 15px; /* 아이콘 사이의 간격 */
+                margin-right: 11.5%; /* 화면 너비의 오른쪽 20%에서 시작하도록 설정 */
+                margin-bottom: 10px;
+            }
+            
+            .social_links img {
+                width: 40px; /* 아이콘 크기 조정 */
+                height: 40px; /* 아이콘 크기 조정 */
+            }
+            
+            .video_container {
+                display: flex;
+                justify-content: center; /* 가로 중앙 정렬 */
+                align-items: center; /* 세로 중앙 정렬 */
+            }
+            
             .container {
                 display: flex;
                 flex-wrap: wrap;
@@ -65,21 +87,31 @@
         </style>
     </head>
     <body>
-        <h1> 지극히 개인적인 가인이의 공간 </h1>
+        <h1 onclick="goToHomePage()"> 지극히 개인적인 가인이의 공간 </h1>
         
         <ul>
-            <li><a href = "category1.html"> About </a></li>
-            <li><a href = "category2.html"> myDaily </a></li>
-            <li><a href = "category3.html"> myTrip </a></li>
-            <li><a href = "category4.html"> mySpace </a></li>
+            <li><a href = "About.html"> About </a></li>
+            <li><a href = "myDaily.html"> myDaily </a></li>
+            <li><a href = "myTrip.html"> myTrip </a></li>
+            <li><a href = "mySpace.html"> mySpace </a></li>
         </ul>
 
         <br><br>
 
-        <video id = "myVideo" controls>
-            <source src = "C:\Users\82107\Desktop\deer.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="social_links_container">
+            <div class="social_links">
+                <a href="https://open.kakao.com/o/sDPkpmlg" target="_blank"><img src="C:\Users\82107\Desktop\kakao_icon.png" alt="Kakao"></a>
+                <a href="https://www.instagram.com/7rzr7rzr?igsh=MmVzYnVuN2lqbDd3&utm_source=qr" target="_blank"><img src="C:\Users\82107\Desktop\instagram_icon.png" alt="Instagram"></a>
+                <a href="https://debuggerworld.tistory.com/" target="_blank"><img src="C:\Users\82107\Desktop\tistory_icon.png" alt="Tistory"></a>
+            </div>
+        </div>
+
+        <div class="video_container">
+            <video id="myVideo" controls>
+                <source src="C:\Users\82107\Desktop\deer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
         <script>
             var video = document.getElementById("myVideo");
@@ -91,6 +123,10 @@
                     video.pause();
                 }
                 });
+
+            function goToHomePage() {
+                window.location.href = "index.html";
+            }
         </script>
 
         <div class = "container">
@@ -106,7 +142,6 @@
         </div>
         <footer>
             <p> 이름: 김가인 | 소속: 단국대학교 죽전캠퍼스 | 학부: SW융합대학 산업보안학과 <br>
-                입학년도: 2020 | 학적상태: 4-1 재학 <br>
                 연락처: 010-1234-5678 | 이메일: gainnotkim@gmail.com  <br>
                 주소: 서울특별시 관악구 신림동  
             </p>
