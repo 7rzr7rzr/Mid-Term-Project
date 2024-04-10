@@ -27,6 +27,7 @@
             li {
                 display: inline-block;
                 margin: 0 10px;
+                font-family: Arial, sans-serif;
             }
 
             li a {
@@ -35,6 +36,26 @@
                 color: #333; 
                 font-size: 30px;
             }
+
+            .social_links {
+                display: flex;
+                justify-content: center; /* 중앙 정렬 */
+                gap: 20px; /* 아이콘 사이의 간격 */
+                margin-top: 20px; /* 이전 섹션과의 간격 */
+            }
+            
+            .social_links img {
+                width: 50px; /* 아이콘 크기 조정 */
+                height: 50px; /* 아이콘 크기 조정 */
+                cursor: pointer; /* 마우스 오버 시 커서 변경 */
+            }
+            
+            footer {
+                text-align: center;
+                font-family: Arial, sans-serif;
+                font-size: 18px;
+            }
+            
         </style>
     </head>
 
@@ -47,12 +68,25 @@
             <li><a href = "myTrip.html"> myTrip </a></li>
             <li><a href = "mySpace.html"> mySpace </a></li>
         </ul>
-
+        
         <script>
             function goToHomePage() {
                 window.location.href = "index.html";
             }
         </script>
-        
+
+        <div class="social_links">
+            <a href="https://open.kakao.com/o/sDPkpmlg" target="_blank"><img src="C:\Users\82107\Desktop\kakao_icon.png" alt="Kakao"></a>
+            <a href="https://www.instagram.com/7rzr7rzr?igsh=MmVzYnVuN2lqbDd3&utm_source=qr" target="_blank"><img src="C:\Users\82107\Desktop\instagram_icon.png" alt="Instagram"></a>
+            <a href="https://debuggerworld.tistory.com/" target="_blank"><img src="C:\Users\82107\Desktop\tistory_icon.png" alt="Tistory"></a>
+        </div>
+
+        <footer>
+            <p> 이름: 김가인 | 소속: 단국대학교 죽전캠퍼스 | 학부: SW융합대학 산업보안학과 <br>
+                연락처: 010-1234-5678 | 이메일: gainnotkim@gmail.com  <br>
+                주소: 서울특별시 관악구 신림동  
+            </p>
+        </footer>
+
     </body>
 </html>
