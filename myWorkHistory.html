@@ -37,19 +37,49 @@
                 font-size: 30px;
             }
 
-            .social_links {
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f5f5f5;
+            }
+            
+            .portfolio {
                 display: flex;
-                justify-content: center; /* 중앙 정렬 */
-                gap: 20px; /* 아이콘 사이의 간격 */
-                margin-top: 20px; /* 이전 섹션과의 간격 */
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
             }
             
-            .social_links img {
-                width: 50px; /* 아이콘 크기 조정 */
-                height: 50px; /* 아이콘 크기 조정 */
-                cursor: pointer; /* 마우스 오버 시 커서 변경 */
+            .portfolio-item {
+                background-color: #ffffff;
+                margin: 15px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                width: 350px;
+                overflow: hidden;
             }
             
+            .portfolio-image {
+                width: 100%;
+                height: auto;
+            }
+            
+            .portfolio-description {
+                padding: 15px;
+            }
+            
+            .portfolio-description h3 {
+                margin-top: 0;
+                color: #333333;
+            }
+            
+            .portfolio-description p {
+                color: #666666;
+                line-height: 1.6;
+            }
+
             footer {
                 text-align: center;
                 font-family: Arial, sans-serif;
@@ -64,9 +94,9 @@
         
         <ul>
             <li><a href = "About.html"> About </a></li>
+            <li><a href = "myWorkHistory.html"> myWorkHistory </a></li>
             <li><a href = "myDaily.html"> myDaily </a></li>
             <li><a href = "myTrip.html"> myTrip </a></li>
-            <li><a href = "mySpace.html"> mySpace </a></li>
         </ul>
         
         <script>
@@ -75,10 +105,31 @@
             }
         </script>
 
-        <div class="social_links">
-            <a href="https://open.kakao.com/o/sDPkpmlg" target="_blank"><img src="C:\Users\82107\Desktop\kakao_icon.png" alt="Kakao"></a>
-            <a href="https://www.instagram.com/7rzr7rzr?igsh=MmVzYnVuN2lqbDd3&utm_source=qr" target="_blank"><img src="C:\Users\82107\Desktop\instagram_icon.png" alt="Instagram"></a>
-            <a href="https://debuggerworld.tistory.com/" target="_blank"><img src="C:\Users\82107\Desktop\tistory_icon.png" alt="Tistory"></a>
+        <div class="portfolio">
+            <div class="portfolio-item">
+                <img src="C:\Users\82107\Desktop\image\kitri.png" alt="Project Image" class="portfolio-image">
+                <div class="portfolio-description">
+                    <h3> 한국정보기술연구원<br>IT 취업교육 수료 </h3>
+                    <p style="text-align: center;"> 정보보안전문가양성 -<br> 보안인프라구축&보안관제 과정 수료<br>(2022.12.21.~2023.06.13) </p>
+                    <p style="text-align: center;"> 실무 프로젝트 참여:<br>로그 서버를 이용한 모니터링 환경 구축 (2023.04.26.~2023.06.13) </p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="C:\Users\82107\Desktop\image\gain_profile.jpg" alt="Project Image" class="portfolio-image">
+                <div class="portfolio-description">
+                    <h3> 참여 이력 없음 </h3>
+                    <p style="text-align: left;"> This is a brief description of my project. I worked on this project as a part of my role at [Company/University]. It showcases my skills in [Skill 1, Skill 2, Skill 3].</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="C:\Users\82107\Desktop\image\gain_profile.jpg" alt="Project Image" class="portfolio-image">
+                <div class="portfolio-description">
+                    <h3> 참여 이력 없음 </h3>
+                    <p style="text-align: left;"> This is a brief description of my project. I worked on this project as a part of my role at [Company/University]. It showcases my skills in [Skill 1, Skill 2, Skill 3].</p>
+                </div>
+            </div>
         </div>
 
         <footer>
