@@ -7,7 +7,6 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                text-align: center;
             } 
 
             h1 {
@@ -19,6 +18,7 @@
             }
 
             ul {
+                text-align: center;
                 list-style-type: none;
                 padding: 0;
                 margin: 0;
@@ -71,6 +71,7 @@
             }
             
             .portfolio-description h3 {
+                text-align: center;
                 margin-top: 0;
                 color: #333333;
             }
@@ -80,12 +81,56 @@
                 line-height: 1.6;
             }
 
-            footer {
-                text-align: center;
-                font-family: Arial, sans-serif;
-                font-size: 18px;
+            .footer {
+                background-color: #333; 
+                color: white;
+                padding: 10px 0;
+                font-size: 16px;
             }
             
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 10%;
+            }
+            
+            .contact-info p {
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            
+            .contact-info a {
+                color: white;
+                text-decoration: none;
+                margin-right: 10px;
+            }
+            
+            .social-media a {
+                display: inline-block;
+                width: 24px; /* or the size you prefer */
+                height: 24px; /* or the size you prefer */
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-right: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            .social-icon {
+                margin-top: 10px;
+                width: 24px;
+                height: 24px;
+            }            
+            
+            .footer-bottom {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .footer-bottom p {
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -116,28 +161,40 @@
             </div>
 
             <div class="portfolio-item">
-                <img src="C:\Users\82107\Desktop\image\gain_profile.jpg" alt="Project Image" class="portfolio-image">
+                <img src="C:\Users\82107\Desktop\image\capstone.png" alt="Project Image" class="portfolio-image">
                 <div class="portfolio-description">
-                    <h3> 참여 이력 없음 </h3>
-                    <p style="text-align: left;"> This is a brief description of my project. I worked on this project as a part of my role at [Company/University]. It showcases my skills in [Skill 1, Skill 2, Skill 3].</p>
+                    <h3> 단국대학교 산업보안학과<br>실무중심산학협력프로젝트1<br>(캡스톤디자인-IS) </h3>
+                    <p style="text-align: center;"> AI를 활용한 동적 디지털 워터마킹 서비스 (2024.03.04.~2024.06.10) </p>
+                    <p style="text-align: center;"> #YOLO #CRNN #객체탐지 #텍스트인식<br>#디지털워터마크 #스테가노그래피<br>#웹툰저작권보호 </p>
                 </div>
             </div>
 
             <div class="portfolio-item">
-                <img src="C:\Users\82107\Desktop\image\gain_profile.jpg" alt="Project Image" class="portfolio-image">
+                <img src="C:\Users\82107\Desktop\image\website.jpg" alt="Project Image" class="portfolio-image">
                 <div class="portfolio-description">
-                    <h3> 참여 이력 없음 </h3>
-                    <p style="text-align: left;"> This is a brief description of my project. I worked on this project as a part of my role at [Company/University]. It showcases my skills in [Skill 1, Skill 2, Skill 3].</p>
+                    <h3> 포트폴리오용 웹사이트 제작 (2024.04.08.~) </h3>
+                    <p style="text-align: center;"> 웹 프로그래밍을 배워본 적이 없어서 맨땅에 헤딩 중입니다. </p>
+                    <p style="text-align: center;"> 예쁘게 봐주시고 응원해 주세요 ♥ </p>
                 </div>
             </div>
         </div>
 
-        <footer>
-            <p> 이름: 김가인 | 소속: 단국대학교 죽전캠퍼스 | 학부: SW융합대학 산업보안학과 <br>
-                연락처: 010-1234-5678 | 이메일: gainnotkim@gmail.com  <br>
-                주소: 서울특별시 관악구 신림동  
-            </p>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <p> Contact me </p>
+                    <a href="mailto:crocoberry1603@naver.com">crocoberry1603@naver.com </a> | <a> Tel: 010-1234-1004 </a>
+                    <div class="social-media">
+                        <a href="https://open.kakao.com/o/sDPkpmlg" target="_blank"><img src="C:\Users\82107\Desktop\image\kakao_icon.png" class="social-icon"></a>
+                        <a href="https://www.instagram.com/7rzr7rzr?igsh=MmVzYnVuN2lqbDd3&utm_source=qr" target="_blank"><img src="C:\Users\82107\Desktop\image\instagram_icon.png" class="social-icon"></a>
+                        <a href="https://github.com/7rzr7rzr" target="_blank"><img src="C:\Users\82107\Desktop\image\github_icon.png" class="social-icon"></a>
+                        <a href="https://debuggerworld.tistory.com/" target="_blank"><img src="C:\Users\82107\Desktop\image\tistory_icon.png" alt="Tistory" class="social-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> © 2024. GA-IN KIM All rights reserved </p>
+            </div>
         </footer>
-
     </body>
 </html>
