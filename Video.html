@@ -208,7 +208,7 @@
             }
             
             let slideIndex = 0;
-            showSlides(slideIndex);  // 초기 슬라이드 표시
+            showSlides(slideIndex);  
             
             function moveSlide(n) {
                 showSlides(slideIndex += n);
@@ -229,7 +229,7 @@
                 const videos = document.querySelectorAll('.slide video');
                 videos.forEach((video, index) => {
                     video.addEventListener('ended', () => {
-                        moveSlide(1);  // 비디오가 끝나면 다음 슬라이드로 이동
+                        moveSlide(1);  
                     });
                 });
             });
@@ -260,10 +260,10 @@
                     <p> Contact me </p>
                     <a href="mailto:crocoberry1603@naver.com">crocoberry1603@naver.com </a> | <a> Tel: 010-1234-1004 </a>
                     <div class="social-media">
-                        <a href="https://open.kakao.com/o/sDPkpmlg" target="_blank"><img src="C:\Users\82107\Desktop\image\kakao_icon.png" class="social-icon"></a>
-                        <a href="https://www.instagram.com/7rzr7rzr?igsh=MmVzYnVuN2lqbDd3&utm_source=qr" target="_blank"><img src="C:\Users\82107\Desktop\image\instagram_icon.png" class="social-icon"></a>
-                        <a href="https://github.com/7rzr7rzr" target="_blank"><img src="C:\Users\82107\Desktop\image\github_icon.png" class="social-icon"></a>
-                        <a href="https://debuggerworld.tistory.com/" target="_blank"><img src="C:\Users\82107\Desktop\image\tistory_icon.png" alt="Tistory" class="social-icon"></a>
+                        <a href="https://open.kakao.com/o/sDPkpmlg" target="_blank"><img src="source/image/kakao_icon.png" class="social-icon"></a>
+                        <a href="https://www.instagram.com/7rzr7rzr?igsh=MmVzYnVuN2lqbDd3&utm_source=qr" target="_blank"><img src="source/image/instagram_icon.png" class="social-icon"></a>
+                        <a href="https://github.com/7rzr7rzr" target="_blank"><img src="source/image/github_icon.png" class="social-icon"></a>
+                        <a href="https://debuggerworld.tistory.com/" target="_blank"><img src="source/image/tistory_icon.png" class="social-icon"></a>
                     </div>
                 </div>
             </div>
