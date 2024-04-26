@@ -38,6 +38,57 @@
                 font-size: 30px;
             }
 
+            .slider {
+                position: relative;
+                width: 100%;
+                background: black;
+                margin-bottom: 50px;
+                overflow: hidden;
+            }
+            
+            .slide {
+                display: none;
+                width: 100%; /* 비디오의 폭을 80%로 설정 */
+                height: auto; /* 비디오의 높이를 자동으로 설정 */
+            }
+            
+            .slide video {
+                width: 100%;
+                height: 100%;
+                object-fit: contain; /* 비디오가 비율을 유지하며 창에 맞춰짐 */
+            }
+            
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%); /* 중앙 정렬을 위해 오타 수정 */
+                z-index: 10;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+            
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+            
+            .prev {
+                left: 0;
+                border-radius: 3px 0 0 3px;
+            }
+            
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+        
             .footer {
                 background-color: #333; 
                 color: white;
@@ -88,6 +139,7 @@
             .footer-bottom p {
                 text-align: center;
             }
+            
         </style>
     </head>
 
@@ -103,10 +155,88 @@
 
         <br><br>
 
-        <script> 
+        <div class="slider">
+            <div class="slides">
+              <div class="slide">
+                <video autoplay muted loop>
+                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="slide">
+                <video autoplay muted loop>
+                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="slide">
+                <video autoplay muted loop>
+                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="slide">
+                <video autoplay muted loop>
+                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+          </div>
+          
+          <script> 
             function goToHomePage() {
                 window.location.href = "index.html";
             }
+
+            let slideIndex = 0;
+            showSlides(slideIndex);
+
+            function moveSlide(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("slide");
+                if (n >= slides.length) {
+                    slideIndex = 0
+                }
+                if (n < 0) {
+                    slideIndex = slides.length - 1
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex].style.display = "block";
+            }
+
+            setInterval(function() {
+                slideIndex++;
+                showSlides(slideIndex);
+            }, 5000); 
+
+            window.onload = function() {
+                adjustSliderHeight();
+            };
+            
+            function adjustSliderHeight() {
+                var videos = document.querySelectorAll('.slide video');
+                var maxHeight = 0;
+            
+                videos.forEach(function(video) {
+                    var height = video.clientHeight;
+                    maxHeight = (height > maxHeight) ? height : maxHeight;
+                });
+            
+                var slider = document.querySelector('.slider');
+                slider.style.height = maxHeight + 'px';
+            }
+            
+            window.onresize = adjustSliderHeight;
+            
         </script>
 
         <footer class="footer">
