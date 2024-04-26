@@ -48,21 +48,21 @@
             
             .slide {
                 display: none;
-                width: 100%; /* 비디오의 폭을 80%로 설정 */
-                height: auto; /* 비디오의 높이를 자동으로 설정 */
+                width: 100%; 
+                height: auto; 
             }
             
             .slide video {
                 width: 100%;
                 height: 100%;
-                object-fit: contain; /* 비디오가 비율을 유지하며 창에 맞춰짐 */
+                object-fit: contain; 
             }
             
             .prev, .next {
                 cursor: pointer;
                 position: absolute;
                 top: 50%;
-                transform: translateY(-50%); /* 중앙 정렬을 위해 오타 수정 */
+                transform: translateY(-50%); 
                 z-index: 10;
                 width: auto;
                 padding: 16px;
@@ -116,8 +116,8 @@
             
             .social-media a {
                 display: inline-block;
-                width: 24px; /* or the size you prefer */
-                height: 24px; /* or the size you prefer */
+                width: 24px; 
+                height: 24px; 
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -158,27 +158,43 @@
         <div class="slider">
             <div class="slides">
               <div class="slide">
-                <video autoplay muted loop>
-                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video1.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="slide">
-                <video autoplay muted loop>
-                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video2.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="slide">
-                <video autoplay muted loop>
-                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video3.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="slide">
-                <video autoplay muted loop>
-                  <source src="C:\Users\82107\Desktop\Suzume.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="slide">
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video5.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="slide">
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video6.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="slide">
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video7.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="slide">
+                <video autoplay muted>
+                  <source src="C:\Users\82107\Desktop\image\video8.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
@@ -186,59 +202,58 @@
             <a class="next" onclick="moveSlide(1)">&#10095;</a>
           </div>
           
-          <script> 
+          <script>
             function goToHomePage() {
                 window.location.href = "index.html";
             }
-
+            
             let slideIndex = 0;
-            showSlides(slideIndex);
-
+            showSlides(slideIndex);  // 초기 슬라이드 표시
+            
             function moveSlide(n) {
                 showSlides(slideIndex += n);
             }
-
+            
             function showSlides(n) {
-                let i;
                 let slides = document.getElementsByClassName("slide");
-                if (n >= slides.length) {
-                    slideIndex = 0
+                if (n >= slides.length) slideIndex = 0;
+                if (n < 0) slideIndex = slides.length - 1;
+            
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
                 }
-                if (n < 0) {
-                    slideIndex = slides.length - 1
-                }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slides[slideIndex].style.display = "block";
+                slides[slideIndex].style.display = "block";  
             }
-
-            setInterval(function() {
-                slideIndex++;
-                showSlides(slideIndex);
-            }, 5000); 
-
+            
+            document.addEventListener("DOMContentLoaded", function() {
+                const videos = document.querySelectorAll('.slide video');
+                videos.forEach((video, index) => {
+                    video.addEventListener('ended', () => {
+                        moveSlide(1);  // 비디오가 끝나면 다음 슬라이드로 이동
+                    });
+                });
+            });
+            
             window.onload = function() {
                 adjustSliderHeight();
             };
             
             function adjustSliderHeight() {
-                var videos = document.querySelectorAll('.slide video');
-                var maxHeight = 0;
+                const videos = document.querySelectorAll('.slide video');
+                let maxHeight = 0;
             
-                videos.forEach(function(video) {
-                    var height = video.clientHeight;
-                    maxHeight = (height > maxHeight) ? height : maxHeight;
+                videos.forEach(video => {
+                    const height = video.clientHeight;
+                    maxHeight = Math.max(maxHeight, height);
                 });
             
-                var slider = document.querySelector('.slider');
+                const slider = document.querySelector('.slider');
                 slider.style.height = maxHeight + 'px';
             }
             
             window.onresize = adjustSliderHeight;
-            
-        </script>
-
+            </script>
+                      
         <footer class="footer">
             <div class="footer-content">
                 <div class="contact-info">
@@ -253,7 +268,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p> © 2024. GA-IN KIM All rights reserved </p>
+                <p> © 2024. GA-IN KIM All rights reserved. </p>
             </div>
         </footer>
 
